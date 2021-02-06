@@ -1,0 +1,1 @@
+I'm learning go. I am practicing by solving [Advent of Code 2020](https://adventofcode.com/2020). This repository contains my solutions.
