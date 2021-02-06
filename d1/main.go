@@ -8,7 +8,7 @@ import (
 func main() {
 	var ints []int
 
-	for i := 0; ; i++ {
+	for {
 		var tmp int
 		_, err := fmt.Scanf(`%d`, &tmp)
 		if err != nil {
