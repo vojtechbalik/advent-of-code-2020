@@ -61,14 +61,20 @@ func (q *Queue) Pop() (item interface{}, ok bool) {
 
 // Front returns the first (about to be popped) item in the queue. If the queue
 // is empty, ok is set to false, true otherwise.
-func (q Queue) Front() (item interface{}, ok bool) {
+func (q *Queue) Front() (item interface{}, ok bool) {
 	if q.len == 0 {
 		return nil, false
 	}
 	return q.buf[q.start], true
 }
 
+// At returns index-th item in the queue. q.At(0) returns the same item as
+// q.Front(), but does not perform any checks.
+func (q *Queue) At(index int) interface{} {
+	return q.buf[(q.start+index)%len(q.buf)]
+}
+
 // Len returns number of elements stored in the queue.
-func (q Queue) Len() int {
+func (q *Queue) Len() int {
 	return q.len
 }
